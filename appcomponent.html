@@ -1,0 +1,21 @@
+<input type="text" #ref  (keyup)="search(ref.value)" > 
+<label class="bg-danger">Search here</label>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of data | search : v ">
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.city}}</td>
+      </tr>
+    
+    </tbody>
+  </table>
+  {{v}}
